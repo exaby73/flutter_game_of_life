@@ -37,11 +37,12 @@ class PlayButton extends HookWidget {
       [isRunning.value],
     );
 
-    return FloatingActionButton(
+    return FloatingActionButton.extended(
       onPressed: () {
         isRunning.value = !isRunning.value;
       },
-      child: Icon(isRunning.value ? Icons.restore : Icons.play_arrow),
+      label: Text(isRunning.value ? 'Reset' : 'Play'),
+      icon: Icon(isRunning.value ? Icons.restore : Icons.play_arrow),
     );
   }
 }
